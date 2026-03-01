@@ -8,5 +8,5 @@ export default defineConfig({
   reporter: "html",
   use: { baseURL: "http://localhost:3000", trace: "on-first-retry", screenshot: "only-on-failure" },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
-  webServer: { command: "pnpm dev", url: "http://localhost:3000", reuseExistingServer: !process.env.CI },
+  webServer: { command: "pnpm dev", url: "http://localhost:3000", reuseExistingServer: !process.env.CI, timeout: 30000 },
 });
